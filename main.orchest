@@ -2,6 +2,25 @@
     "name": "Main",
     "parameters": {},
     "services": {
+        "metabase": {
+            "binds": {
+                "/data": "/root"
+            },
+            "env_variables": {
+                "MB_DB_FILE": "/root/metabase.db"
+            },
+            "exposed": true,
+            "image": "metabase/metabase:v0.44.1",
+            "name": "metabase",
+            "order": 2,
+            "ports": [
+                3000
+            ],
+            "requires_authentication": true,
+            "scope": [
+                "interactive"
+            ]
+        },
         "postgres": {
             "binds": {
                 "/data": "/var/lib/postgresql/data"
