@@ -1,0 +1,14 @@
+version: 1
+default_environment: dev
+environments:
+- name: dev
+- name: staging
+- name: prod
+project_id: 26bdde9e-8eed-4b89-b521-bc3ca6c78727
+plugins:
+  extractors:
+  - name: tap-bigquery
+    variant: anelendata
+    pip_url: tap-bigquery
+    config:
+      start_datetime: '2021-01-30T00:00:00Z'
