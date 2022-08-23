@@ -2,6 +2,12 @@ version: 1
 default_environment: dev
 environments:
 - name: dev
+  config:
+    plugins:
+      extractors:
+      - name: tap-bigquery
+        select:
+        - '*.*'
 - name: staging
 - name: prod
 project_id: 26bdde9e-8eed-4b89-b521-bc3ca6c78727
@@ -12,3 +18,15 @@ plugins:
     pip_url: tap-bigquery
     config:
       start_datetime: '2021-01-30T00:00:00Z'
+      streams:
+      - name: ga4_obfuscated_sample_ecommerce_20210131
+        table: orchest-ga4-tutorial.ga4_data_sample.summarized_events_20210131
+        columns:
+        - event_timestamp
+        - event_name
+        - hostname
+        - event_params
+        - traffic_source_name
+        - traffic_source_medium
+        - traffic_source_source
+        datetime_key: event_timestamp
