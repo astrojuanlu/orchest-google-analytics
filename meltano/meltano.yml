@@ -30,3 +30,12 @@ plugins:
         - traffic_source_medium
         - traffic_source_source
         datetime_key: event_timestamp
+  loaders:
+  - name: target-postgres
+    variant: transferwise
+    pip_url: pipelinewise-target-postgres
+    config:
+      user: postgres
+      dbname: warehouse
+      default_target_schema: public
+      primary_key_required: false
