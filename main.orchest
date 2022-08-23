@@ -29,7 +29,48 @@
         "auto_eviction": false,
         "data_passing_memory_size": "1GB"
     },
-    "steps": {},
+    "steps": {
+        "80c129a4-db08-4b9f-8254-ab7a31d1c2d5": {
+            "environment": "55c6a931-5d54-4542-957e-6f0b72eb4032",
+            "file_path": "setup.sh",
+            "incoming_connections": [],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    20,
+                    80.00000000000001
+                ]
+            },
+            "parameters": {},
+            "title": "Setup",
+            "uuid": "80c129a4-db08-4b9f-8254-ab7a31d1c2d5"
+        },
+        "f6affa68-e2de-4581-8dd9-0dc06434a732": {
+            "environment": "55c6a931-5d54-4542-957e-6f0b72eb4032",
+            "file_path": "ga4_el.sh",
+            "incoming_connections": [
+                "80c129a4-db08-4b9f-8254-ab7a31d1c2d5"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    283.5,
+                    80
+                ]
+            },
+            "parameters": {},
+            "title": "GA4 Extract & Load",
+            "uuid": "f6affa68-e2de-4581-8dd9-0dc06434a732"
+        }
+    },
     "uuid": "e47f428d-42db-4726-a66a-816feca57ca4",
     "version": "1.2.1"
 }
