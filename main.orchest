@@ -1,0 +1,35 @@
+{
+    "name": "Main",
+    "parameters": {},
+    "services": {
+        "postgres": {
+            "binds": {
+                "/data": "/var/lib/postgresql/data"
+            },
+            "env_variables": {
+                "PGDATA": "/var/lib/postgresql/data/pgdata",
+                "POSTGRES_DB": "warehouse",
+                "POSTGRES_HOST_AUTH_METHOD": "trust"
+            },
+            "exposed": false,
+            "image": "postgres",
+            "name": "postgres",
+            "order": 1,
+            "ports": [
+                5432
+            ],
+            "requires_authentication": true,
+            "scope": [
+                "interactive",
+                "noninteractive"
+            ]
+        }
+    },
+    "settings": {
+        "auto_eviction": false,
+        "data_passing_memory_size": "1GB"
+    },
+    "steps": {},
+    "uuid": "e47f428d-42db-4726-a66a-816feca57ca4",
+    "version": "1.2.1"
+}
